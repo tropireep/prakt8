@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота №8</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a175ab;
+            color: #000000;
+            margin: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid #000000;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 0;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 15px;
+        }
+
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0 0 0;
+        }
+
+        .task-list li {
+            margin-bottom: 12px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #000000;
+            background-color: #eeeeee;
+            color: #000000;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Практична робота №8<br><br><small></h1>
+        
+        <ul class="task-list">
+            <li><a href="1/index.html" class="btn">Завдання 1</a></li>
+            <li><a href="2/index.html" class="btn">Завдання 2</a></li>
+            <li><a href="3/index.html" class="btn">Завдання 3</a></li>
+            <li><a href="4/index.html" class="btn">Завдання 4</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 2 - Метод GET</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="task-container">
+        <h2>Математичні обчислення (GET)</h2>
+        
+        <form action="" method="GET">
+            <div class="form-group">
+                <label for="a">Змінна $a:</label>
+                <input type="number" id="a" name="a" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="b">Змінна $b:</label>
+                <input type="number" id="b" name="b" required>
+            </div>
+            
+            <input type="submit" value="Обчислити">
+        </form>
+
+        <div class="results">
+            <?php
+            // Перевіряємо, чи передані змінні 'a' та 'b' через GET-запит
+            if (isset($_GET['a']) && isset($_GET['b'])) {
+                
+                // Отримуємо значення і примусово перетворюємо їх на цілі числа (Integer)
+                $a = (int)$_GET['a'];
+                $b = (int)$_GET['b'];
+
+                // Виконуємо математичні обчислення
+                $sum = $a + $b;
+                $diff = $a - $b;
+                $prod = $a * $b;
+                
+                // Перевірка ділення на нуль, щоб уникнути помилки сервера
+                if ($b != 0) {
+                    $quot = $a / $b;
+                } else {
+                    $quot = "Помилка (ділення на нуль)";
+                }
+
+                // Виводимо результати
+                echo "<h3>Результати обчислень:</h3>";
+                echo "<p><strong>Сума (\$a + \$b):</strong> $sum</p>";
+                echo "<p><strong>Різниця (\$a - \$b):</strong> $diff</p>";
+                echo "<p><strong>Добуток (\$a * \$b):</strong> $prod</p>";
+                echo "<p><strong>Частка (\$a / \$b):</strong> $quot</p>";
+            }
+            ?>
+        </div>
+    </div>
+
+</body>
+</html>

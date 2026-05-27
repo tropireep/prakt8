@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Суперглобальні змінні РНР</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <h2>Суперглобальні змінні РНР</h2>
+
+    <table>
+        <tr>
+            <th>Позначення змінної</th>
+            <th>Характеристика</th>
+            <th>Отримане значення</th>
+        </tr>
+        
+        <tr>
+            <td>$_SERVER['SERVER_PROTOCOL']</td>
+            <td>Змінна містить ім'я і версію інформаційного протоколу, який був використаний для запиту.</td>
+            <td><?php echo $_SERVER['SERVER_PROTOCOL']; ?></td>
+        </tr>
+
+        <tr>
+            <td>$_SERVER</td>
+            <td>Інформація про сервери та середовище виконання.</td>
+            <td><?php echo "Містить " . count($_SERVER) . " елементів (параметрів сервера)."; ?></td>
+        </tr>
+
+        <tr>
+            <td>$_GET</td>
+            <td>Асоціативний масив змінних, переданих скрипту через параметри URL.</td>
+            <td><?php if(empty($_GET)) echo "Масив порожній"; else print_r($_GET); ?></td>
+        </tr>
+
+        <tr>
+            <td>$_POST</td>
+            <td>Асоціативний масив змінних, переданих скрипту через HTTP POST.</td>
+            <td><?php if(empty($_POST)) echo "Масив порожній"; else print_r($_POST); ?></td>
+        </tr>
+
+        <tr>
+            <td>$_FILES</td>
+            <td>Асоціативний масив елементів (файлів), завантажених через HTTP POST.</td>
+            <td><?php if(empty($_FILES)) echo "Масив порожній"; else print_r($_FILES); ?></td>
+        </tr>
+
+        <tr>
+            <td>$_COOKIE</td>
+            <td>Асоціативний масив змінних, переданих скрипту через HTTP Cookies.</td>
+            <td><?php if(empty($_COOKIE)) echo "Масив порожній"; else print_r($_COOKIE); ?></td>
+        </tr>
+
+        <tr>
+            <td>$_SESSION</td>
+            <td>Асоціативний масив змінних поточної сесії скрипта.</td>
+            <td>
+                <?php 
+                    @session_start(); // Запускаємо сесію, щоб уникнути помилок
+                    if(empty($_SESSION)) echo "Масив порожній"; else print_r($_SESSION); 
+                ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td>$_REQUEST</td>
+            <td>Асоціативний масив, що містить дані $_GET, $_POST та $_COOKIE.</td>
+            <td><?php if(empty($_REQUEST)) echo "Масив порожній"; else print_r($_REQUEST); ?></td>
+        </tr>
+
+        <tr>
+            <td>$_ENV</td>
+            <td>Асоціативний масив змінних середовища виконання.</td>
+            <td><?php if(empty($_ENV)) echo "Масив порожній"; else print_r($_ENV); ?></td>
+        </tr>
+
+        <tr>
+            <td>$GLOBALS</td>
+            <td>Містить посилання на всі змінні глобальної області видимості скрипта.</td>
+            <td><?php echo "Масив містить " . count($GLOBALS) . " глобальних змінних."; ?></td>
+        </tr>
+    </table>
+
+</body>
+</html>
